@@ -1,0 +1,45 @@
+﻿@model Mvc3.Models.User
+@{
+    Layout="~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewProfile";
+}
+
+<div>
+    <button type="submit" value="Edit Profile" border="10px" style="background-color: gray; margin-left: 60%; padding-left: 10px; padding-right: 10px ;padding-top:5px"><a href='@(Url.Action("Update", "UserHome", new { id = Model.Id }, null))'>Edit Profile</a></button>
+</div>
+<div>
+    <table>
+        <tr>
+            <td><h2> @Model.Name</h2></td>
+        </tr>
+        <tr>
+            <td><img src="@Url.Content("~/Images/upload/" + Model.dp)" height="120" width="120" alt="Picture not available" /></td>
+        </tr>
+        <tr>
+            <td><h2>User Name: </h2></td>
+            <td><h2 style="color:white"> @Model.Name</h2></td>
+            </tr>
+        <tr>
+            <td><h2>Phone Number:</h2></td>
+            <td><h2 style="color: white; text-align: center"> @Model.phoneNo</h2></td>
+        </tr>
+        <tr>
+            <td><h2>Email: </h2></td>
+            <td><h2 style="color:white"> @Model.Email</h2></td>
+        </tr> 
+        <tr>   
+        <td><h2>Gender:</h2></td>
+            <td><h2 style="color:white"> @Model.gender</h2></td>
+        </tr>
+        <tr>
+            <td><h3>Date Of Birth: </h3></td>
+            <td><h2 style="color:white"> @Model.dob</h2></td>
+        </tr>
+        <tr>
+            <td><h3>Education: </h3></td>
+            <td><h2 style="color:white"> @Model.education</h2></td>
+        </tr>
+    </table>
+    </div>
+<div id="yourstatuses">
+</div>

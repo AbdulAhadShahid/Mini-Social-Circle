@@ -1,0 +1,25 @@
+﻿@model Mvc3.Models.User
+
+<div>
+    <h2>Basic Information</h2>
+    <form id="edit_info" name="updateimage" action="/Profile/UpdatePhoto/@Model.Id" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" />
+        <input style=" border: solid; padding: 10px; background-color: gray" type="submit" name="change" id="change" value="Change Picture" />
+    </form>
+    <form id="edit_info" name="save" action="/Profile/updateValidation/@Model.Id" method="post">
+        @Html.TextBoxFor(m => Model.Name, new { placeholder = "Username", style = "width:45%border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin:0 10px 17px 0;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        @Html.TextBoxFor(m => Model.Password, new { placeholder = "Password", style = "width:45%border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin:0 10px 17px 0;font-family:'Open Sans', sans-serif;", required = "" })
+        @Html.TextBoxFor(m => Model.Email, new { placeholder = "Email", style = "width:45%;border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        @Html.TextBoxFor(m => Model.phoneNo, new { placeholder = "Phone Number", style = "width:45%;border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin-top:1%;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        @Html.TextBoxFor(m => Model.gender, new { placeholder = "Gender e.g. Male/Female", style = "width:45%;border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin-left:26%;margin-top:1%;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        @Html.TextBoxFor(m => Model.dob, new { placeholder = "Date Of Birth", style = "width:45%;border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin-left:26%;margin-top:1%;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        @Html.TextBoxFor(m => Model.education, new { placeholder = "Education", style = "width:45%;border:1px solid #E5E5E5;border-radius:1px;background:#fff;color:#000;padding:10px 10px;float:left;margin-left:26%;margin-top:1%;font-family:'Open Sans', sans-serif;", required = "", autofocus = "" })
+
+        <button style=" margin-top:25%; border: solid; padding: 10px; background-color: gray " type="submit" name="save" id="save">Save Changes</button>
+    </form>
+</div>
